@@ -1,0 +1,116 @@
+# =============================================================
+# E-Paper Dashboard Configuration
+# Edit this file to configure your dashboard, then save and
+# restart the application.
+# =============================================================
+
+# Serial port the ESP32 is connected to.
+# Leave blank to auto-detect, or set explicitly e.g. "COM4"
+serial_port: ""
+
+update_interval_seconds: 15
+
+# Which pages to show, in the order the button cycles through them.
+# Remove a page from this list to disable it.
+enabled_pages:
+  - clock
+  - weather
+  - system
+  - proxmox
+  - plex
+  - fact
+  - sports_calendar
+
+# -------------------------------------------------------------
+# Page: System (CPU / RAM / DISK / NET)
+# steam_api_key: get one at steamcommunity.com/dev/apikey
+# Leave blank to disable Steam game detection.
+# -------------------------------------------------------------
+system:
+  enabled: true
+  history_points: 20
+  steam_api_key: ""
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 0
+
+# -------------------------------------------------------------
+# Page: Clock & Status
+# -------------------------------------------------------------
+clock:
+  enabled: true
+  time_format_24h: false
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 0
+
+# -------------------------------------------------------------
+# Page: Weather (Open-Meteo, no API key required)
+# Set location_override to "lat,lon" to pin a location,
+# e.g. "33.45,-112.07" for Phoenix, AZ.
+# Leave blank to auto-detect from your public IP.
+# -------------------------------------------------------------
+weather:
+  enabled: true
+  location_override: ""
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 600
+
+# -------------------------------------------------------------
+# Page: Now Playing (Plex)
+# server_url: local address of your Plex server
+# api_token:  your Plex token (Settings → Authorized Devices)
+# -------------------------------------------------------------
+plex:
+  enabled: false
+  server_url: "http://192.168.1.x:32400"
+  api_token: "YOUR_PLEX_TOKEN"
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 0
+
+# -------------------------------------------------------------
+# Page: Daily Fact
+# facts_folder: path to a folder containing .txt files.
+# Leave blank to disable.
+# -------------------------------------------------------------
+fact:
+  enabled: false
+  facts_folder: ""
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 0
+
+# -------------------------------------------------------------
+# Page: Proxmox VM/Container Status
+# url:       full URL including port, e.g. "https://192.168.1.10:8006"
+# api_token: "USER@REALM!TOKENID=SECRET"
+# Tag VMs with "dashboard" in Proxmox to include them.
+# -------------------------------------------------------------
+proxmox:
+  enabled: false
+  url: "https://192.168.1.x:8006"
+  api_token: "USER@REALM!TOKENID=YOUR_TOKEN_HERE"
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 0
+
+# -------------------------------------------------------------
+# Page: Sports Calendar
+# -------------------------------------------------------------
+sports_calendar:
+  enabled: true
+  events:
+    - slug:  "fifa.world"
+      dates: "20260611-20260719"
+      label: "FIFA World Cup 2026"
+    - slug:  "fifa.cwc"
+      dates: "20250614-20250714"
+      label: "Club World Cup 2025"
+    - sport: "nfl"
+      dates: "20270108-20270207"
+      label: "Super Bowl LXI"
+  critical_poll: false
+  critical_poll_interval_seconds: 15
+  slow_poll_interval_seconds: 0

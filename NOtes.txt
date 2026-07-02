@@ -1,0 +1,5 @@
+- The microcontroller board is sticking 3.67mm into the Steam Machine (make the legs longer and retaining brakced thinner?)
+- Original front plate widtrh - 6mm
+- Original front plate to steamamchine - 4mm
+- I need to make the legs & palte side skirts - 2.8mm longer
+order 96773A624 screws
