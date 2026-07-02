@@ -18,6 +18,9 @@ Software/Desktop/installer_output/
 # Debug render PNGs from development
 Software/Desktop/debug_*.png
 
+# ── Test sketches ────────────────────────────────────────────────────────────
+Software/Test/
+
 # ── OS / editor junk ─────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
